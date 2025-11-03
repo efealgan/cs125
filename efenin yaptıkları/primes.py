@@ -3,6 +3,7 @@
 prime = True #assume true
 
 number = int(input("provide a positive integer"))
+
 if number == 1:
     prime = False
 
@@ -20,6 +21,6 @@ else:
 
 
 if not prime:
-    print("That is not a prime number.")
+    print(number, "is not a prime number.")
 else:
     print(number, "is a prime number.")
