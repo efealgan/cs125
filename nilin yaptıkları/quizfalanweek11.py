@@ -30,14 +30,12 @@ print("Display all movies directed by Francis Ford Coppola or Steven Spielberg r
 release=df[((df.director=="Francis Ford Coppola")|(df.director=="Steven Spielberg"))&((df.release_year>=1970)&(df.release_year<1990))]
 print(release)
 
-highest=np.max(df.rating)
-highest_rated_movie=df[df.rating==highest]
-name=highest_rated_movie.movie
-director=highest_rated_movie.director
 
-print(f"the {name} is directed by {director} has a rank of {highest}")
+name = df.loc[df["rating"].idxmax(), "movie"]
+director = df.loc[df["rating"].idxmax(), "director"]
 
-df.loc[highest_rated_movie]
+print(f"The movie \"{name}\" is directed by {director} and has a rating of {df["rating"].max()}.")
+
 
 
 
