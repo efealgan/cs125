@@ -48,7 +48,7 @@ for i in range(1,number+1):
 print(list)
 """
 #exercise 5
-
+"""
 import random
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
@@ -73,7 +73,7 @@ for i in list_one and list_two:
     if i in list_one and i in list_two:
             d.append(i)
 print(d)
-
+"""
 #exercise 6
 """
 word=input("enter string: ")
@@ -91,6 +91,13 @@ for i in a:
     if i%2==0:
         b.append(i)
 print(b)
+
+myStr = "nil"
+for i in range(len(myStr)):
+    if myStr[i] == myStr[len(myStr)-i-1]:
+        print("True")
+    else:
+        print("False")
 """
 #exercise 8
 """
@@ -118,50 +125,72 @@ else:
 """
 import random
 number=random.randint(1,9)
-guess=int(input("guess number: "))
 guess_count=0
+
 for i in range(1,11):
+    guess=int(input("guess number: "))
     if guess>number:
         print("guess too high!")
         guess_count+=1
-    if guess<number:
+    elif guess<number:
         print("guessed too low!")
-        guess+=1
+        guess_count+=1
     elif guess==number:
         print("right guess!")
+        guess_count+=1
         break
 print(guess_count)
 """
 #exercise 10
 """
+import random
+list1=[]
+list2=[]
+list3=[]
+for i in range(1,11):
+    number=random.randint(1,100)
+    number2=random.randint(1,100)
+    list1.append(number)
+    list2.append(number2)
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 c=[]
 for i in a and b:
     if i in a and i in b:
         c.append(i)
-print(c)        
+list1.sort()
+list2.sort()
+for i in list1 and list2:
+    if i in list1 and i in list2:
+        list3.append(i)
+print(c)  
+print(list1)
+print(list2)  
+print(list3)    
 """
 #exercise 11
 """
 number=int(input("enter number: "))
-division_count=0
-for i in range(1,number+1):
-    if i%number==0:
-        division_count+=1
-        if division_count>2:
-            print("your number is not prime")
-        elif division_count==2:
-            print("your number is prime")
+list=[]
+isprime=True
+for i in range(2,number):
+    if number%i==0:
+       isprime=False
+       list.append(i)
+
+if isprime:
+    print("number is prime", number)
+else:
+    print("number is not prime, here: ",end=" ")
+    print(list)
 """
 #exercise 12
 """
-a = [5, 10, 15, 20, 25]
+a = [5, 10, 15, 20, 25,30,35,40,45,50]
 b=[]
-first=a[0]
-last=a[-1]
-b.append(first)
-b.append(last)
+for i in range (0,-2,-1):
+    b.append(a[i])
+
 print(b)
 """
 #exercise 15
@@ -169,11 +198,27 @@ print(b)
 word=input("enter word with one space 3 words: ")
 first_space=word.find(" ")
 first_word=word[:first_space]
-second_space=word.find(" ", first_space+1)
-second_word=[(first_space):(second_space)]
-third_word=[second_space:]
+second_space=word.rfind(" ")
+second_word=word[first_space+1:second_space]
+third_word=word[second_space+1:]
 print(third_word, second_word, first_word)
 """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
